@@ -27,7 +27,6 @@ ul, li {
 }
 
 
-
 .container {
   flex-wrap: wrap;
  max-width: 819px;
@@ -52,11 +51,14 @@ ul, li {
   color: blue;
   font-weight: bold;
   outline: 2px solid greenyellow;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
 .icon-plus{
   visibility: hidden;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 .list-wrapper:hover .title{
   color: black;
@@ -65,20 +67,22 @@ ul, li {
 
 .list-wrapper:hover .icon-plus {
   visibility: visible;
+  
 }
 
 .sloth-img {
   visibility: hidden;
+scale: 0;
   height: 0;
+transition: scale 350ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: height 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
 
 .card-lable:hover .sloth-img {
   visibility: visible;
-  height: 300px;
-}
-
-input[type="radio"]:checked+label> .sloth-img {
-  visibility: visible;
+scale: 1;
   height: 300px;
 }
 
@@ -86,4 +90,13 @@ input[type="radio"]:checked+label> .sloth-img {
 .sloth-input:checked ~ .sloth-img {
   visibility: visible;
   height: 300px;
+  scale: 1;
+}
+
+
+.sloth-input:checked + .title>.icon-plus {
+  visibility: visible;
+  fill: red;
+  transform: rotate(45deg);
+ 
 }
