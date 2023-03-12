@@ -1,0 +1,169 @@
+:root {
+
+  --animation: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  flex-wrap: wrap;
+  max-width: 819px;
+  margin: auto auto;
+  padding: 10px;
+  background-color: beige;
+}
+
+
+.main-title {
+  font-size: 20px;
+  font-weight: 800;
+  padding: 24px 0;
+}
+
+.card-lable {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  border-top: 1px solid rgb(201, 201, 210);
+}
+
+
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  color: blue;
+  transition: color var(--animation);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+
+
+.icon-plus {
+  visibility: hidden;
+  transition: transform var(--animation);
+
+}
+
+
+.list-wrapper:hover .title-wrapper {
+  color: black;
+}
+
+.list-wrapper:hover .icon-plus {
+  visibility: visible;
+}
+
+.sloth-img {
+  display: block;
+  visibility: hidden;
+  width: 280px;
+  margin: 0 auto;
+  scale: 0;
+  height: 0;
+
+  background-color: rgb(88, 83, 76);
+  transition: scale var(--animation);
+  transition: height var(--animation);
+}
+
+
+.card-lable:hover .sloth-img {
+  visibility: visible;
+  scale: 1;
+  height: 300px;
+}
+
+.sloth-input:checked~.sloth-img {
+  visibility: visible;
+  height: 300px;
+  scale: 1;
+}
+
+.sloth-input:checked+.title-wrapper>.icon-plus {
+  transform: rotate(45deg);
+}
+
+.sloth-input:checked+.title-wrapper {
+  color: black;
+}
+
+.sloth-input:active+.title-wrapper {
+  color: blue;
+  fill: blue;
+}
+
+li:active .sloth-img {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .main-title {
+    font-size: 30px;
+  }
+
+  .sloth-img {
+    width: 300px;
+  }
+}
+
+/* 1920px */
+
+@media screen and (min-width: 1200px) {
+  .container {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .main-title {
+    font-size: 36px;
+  }
+
+  .card-lable {
+    cursor: pointer;
+  }
+}
+
