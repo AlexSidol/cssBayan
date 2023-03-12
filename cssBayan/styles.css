@@ -22,16 +22,14 @@ a {
   text-decoration: none;
 }
 
-button {
-  font-size: 16px;
-  cursor: pointer;
+ul, li {
+  list-style: none;
 }
 
-img {
-  display: block;
-}
+
 
 .container {
+  flex-wrap: wrap;
  max-width: 819px;
   margin: auto auto;
   outline: 2px solid red ;
@@ -39,13 +37,53 @@ img {
     padding-right: 15px;
       padding-left: 15px;
   }
-}
+} 
 
-.wrapper-block {
+
+
+.card-lable {
   display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  justify-content:space-between;
+  color: blue;
+  font-weight: bold;
+  outline: 2px solid greenyellow;
 
 }
-.icon-plus {
+
+.icon-plus{
+  visibility: hidden;
+}
+.list-wrapper:hover .title{
   color: black;
   
+}
+
+.list-wrapper:hover .icon-plus {
+  visibility: visible;
+}
+
+.sloth-img {
+  visibility: hidden;
+  height: 0;
+}
+
+.card-lable:hover .sloth-img {
+  visibility: visible;
+  height: 300px;
+}
+
+input[type="radio"]:checked+label> .sloth-img {
+  visibility: visible;
+  height: 300px;
+}
+
+
+.sloth-input:checked ~ .sloth-img {
+  visibility: visible;
+  height: 300px;
 }
