@@ -51,7 +51,6 @@ body {
   flex-direction: column;
   padding: 20px 0;
   border-top: 1px solid rgb(201, 201, 210);
-  cursor: pointer;
 }
 
 
@@ -128,7 +127,7 @@ li:active .sloth-img {
   opacity: 0.8;
 }
 
-@media screen and (min-width: 820px) {
+@media screen and (min-width: 480px) {
   .container {
     padding-right: 20px;
     padding-left: 20px;
@@ -163,4 +162,8 @@ li:active .sloth-img {
     font-size: 36px;
   }
 
+  .card-lable {
+    cursor: pointer;
+  }
 }
+
